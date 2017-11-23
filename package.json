@@ -1,0 +1,15 @@
+{
+  "name": "balzrieser.ch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/benunternaehrer/bergziege.git",
+  "author": "Benjamin Unternährer <benjamin.unternaehrer@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node index.js"
+  },
+  "devDependencies": {
+    "pug": "^2.0.0-rc.4"
+  }
+}
