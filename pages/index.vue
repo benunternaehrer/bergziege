@@ -1,4 +1,6 @@
 <template>
-    <router-link to="/ueber-mich">Über mich</router-link>
-    <h1>Hello world from vue!</h1>
+    <main>
+        <router-link to="/ueber-mich">Über mich</router-link>
+        <h1>Hello world from vue!</h1>
+    </main>
 </template>
