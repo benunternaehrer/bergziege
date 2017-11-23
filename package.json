@@ -7,9 +7,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "node index.js"
+    "build": "nuxt generate",
+    "dev": "nuxt"
   },
-  "devDependencies": {
-    "pug": "^2.0.0-rc.4"
+  "dependencies": {
+    "nuxt": "^1.0.0-rc11"
   }
 }
