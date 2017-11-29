@@ -11,6 +11,11 @@
     "dev": "nuxt"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "nuxt": "^1.0.0-rc11"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
   }
 }
