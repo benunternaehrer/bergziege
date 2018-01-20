@@ -1,0 +1,23 @@
+.c-button {
+    @include font(secondary, normal, null, fs-160);
+    display: inline-block;
+    min-width: 230px;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    color: $color-primary;
+    padding-top: $sp5;
+    padding-left: $sp4;
+    padding-bottom: $sp5 + 1px;
+    padding-right: $sp4;
+    margin-bottom: $sp5;
+    vertical-align: bottom;
+    line-height: 80%;
+
+    &--small {
+        padding-top: $sp4;
+        padding-bottom: $sp4 + 2px;
+        @include font-size(fs-100);
+        color: $color-white;
+        min-width: 180px;
+    }
+}

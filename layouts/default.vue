@@ -1,20 +1,27 @@
 <template>
-    <main>
-        <app-navigation></app-navigation>
+    <div>
+        <app-header></app-header>
         <div>
             <nuxt/>
         </div>
-    </main>
+        <app-footer></app-footer>
+    </div>
 </template>
 
 
 <script>
-import Navigation from '~/components/navigation.vue';
+import Header from '~/components/Header.vue';
+import Footer from '~/components/Footer.vue';
 
 export default {
     components: {
-        'app-navigation': Navigation,
+        'app-header': Header,
+        'app-footer': Footer,
     },
 }
 
 </script>
+
+<style lang="scss" type="text/scss">
+    @import "../assets/sass/import-variables.scss";
+</style>

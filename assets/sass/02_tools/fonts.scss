@@ -1,42 +1,4 @@
 // =========================================================
-// FONT-FAMILY MIXINS
-// =========================================================
-
-/**
- * Mixin for your font family
- * @param $font font-family
- * @param $weight font-weight
- * @param $style font-style
- * @example
- *   @include font(Roboto, normal, italic);
- */
-@mixin font($font: primary, $weight: 500, $style: null) {
-
-    @if map-has-key($fonts, $font) {
-
-        // SET FONT FAMILY
-        $selectedFont: map-get($fonts, $font);
-        font-family: map-get($selectedFont, name), map-get($selectedFont, fallback);
-
-        // SET FONT WEIGHT
-        @if $weight in map-get($selectedFont, weights) {
-            $selectedFontWeights: map-get($selectedFont, weights);
-            font-weight: map-get($selectedFontWeights, $weight);
-        }
-        @else {
-            @error('Font weight not set!');
-        }
-    }
-    @else {
-        @error('Font does not exist!');
-    }
-    @if $style {
-        font-style: $style;
-    }
-};
-
-
-// =========================================================
 // FONT-SIZE MIXINS
 // =========================================================
 
@@ -101,3 +63,55 @@
         }
     }
 }
+
+// =========================================================
+// FONT-FAMILY MIXINS
+// =========================================================
+
+/**
+ * Mixin for your font family
+ * @param $font - font-family
+ * @param $weight - optional, font-weight, default normal
+ * @param $style optional, font-style
+ * @param $font-size - optional, font-size defined in map $font-sizes
+ * @example
+ *   @include font(primary, normal, italic);
+ *   @include font(primary, $style: italic);
+ *   @include font(primary, $size: fs-100);
+ *   @include font(secondary);
+ */
+@mixin font($font: null, $weight: normal, $style: null, $size: null) {
+    // Error handling
+    @if $font == null {
+        @error("@include font() expects $font to be set, given `#{$font}`");
+    }
+
+    @if map-has-key($fonts, $font) {
+        // SET FONT FAMILY
+        $selectedFont: map-get($fonts, $font);
+        $availableWeights: map-get($selectedFont, weights);
+
+        font-family: map-get($selectedFont, name), map-get($selectedFont, fallback);
+
+        // SET FONT WEIGHT
+        @if map-has-key($availableWeights, $weight) {
+            font-weight: map-get($availableWeights, $weight);
+        } @else {
+            @error("@include font() expects $weight to be found in map font, given `#{$weight}`");
+        }
+
+        // SET LETTER SPACING
+        @if map-has-key($selectedFont, letterSpacing) {
+            letter-spacing: map-get($selectedFont, letterSpacing);
+        }
+    } @else {
+        @error('Font does not exist!');
+    }
+
+    @if $style {
+        font-style: $style;
+    }
+    @if $size {
+        @include font-size($size);
+    }
+};

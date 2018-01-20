@@ -4,10 +4,9 @@
 
 // sass-lint:disable no-vendor-prefixes
 :root     {
-    @include font(primary, normal);
-    @include font-size(fs-100);
+    @include font(primary, normal, null, fs-100);
     text-align: left;
-    color: $color-black;
+    color: $color-secondary;
     text-size-adjust: none;
     // BU 2016-10-19: BUG IN SASSLINT https://github.com/sasstools/sass-lint/issues/824
     -webkit-font-smoothing: antialiased;

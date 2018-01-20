@@ -4,6 +4,10 @@
 $color-white: #FFFFFF;
 $color-black: #000000;
 
+$color-primary: #0D323B;
+$color-primary--dark: #162E34;
+$color-secondary: #5E5E5E;
+
 
 // =============================================
 // MEDIA QUERIES
@@ -44,22 +48,56 @@ $grid-xl: 1140px;
 // Optional: Include the font style as the last parameter
 // @include font(primary, light, italic);
 
+@font-face {
+    font-family: 'Martel';
+    font-weight: 400;
+    font-style: normal;
+    src: url('~/assets/fonts/martel-regular-webfont.woff2') format('woff2'),
+    url('~/assets/fonts/martel-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Martel';
+    font-weight: 300;
+    font-style: normal;
+    src: url('~/assets/fonts/martel-regular-webfont.woff2') format('woff2'),
+    url('~/assets/fonts/martel-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lucky Fellas';
+    src: url('~/assets/fonts/luckyfellasnarrow-webfont.woff2') format('woff2'),
+    url('~/assets/fonts/luckyfellasnarrow-webfont.woff') format('woff');
+};
+
+@font-face {
+    font-family: 'Prohibition';
+    src: url('~/assets/fonts/prohibitionw00-regular-webfont.woff2') format('woff2'),
+    url('~/assets/fonts/prohibitionw00-regular-webfont.woff') format('woff');
+};
+
 $fonts: (
     primary: (
-        name: 'Roboto',
-        fallback: 'sans-serif',
+        name: 'Martel',
+        fallback: (Times, serif),
         weights: (
-            normal: 400,
-            medium: 500,
-            bold: 700
+            light: 300,
+            normal: 400
         )
     ),
     secondary: (
-        name: 'Times',
-        fallback: 'serif',
+        name: 'Prohibition',
+        fallback: serif,
         weights: (
             normal: 400,
-            bold: 700
+        ),
+        letterSpacing: 0.3ch,
+    ),
+    tertiary: (
+        name: 'Lucky Fellas',
+        fallback: serif,
+        weights: (
+            normal: 400,
         )
     )
 );
@@ -86,14 +124,34 @@ $font-sizes: (
         font-size-xl: 20px,
         line-height: 140%
     ),
+    fs-140: (
+        font-size: 18px,
+        font-size-md: 20px,
+        font-size-xl: 22px,
+        line-height: 140%
+    ),
+    fs-160: (
+        font-size: 20px,
+        font-size-md: 24px,
+        font-size-xl: 26px,
+        line-height: 100%
+    ),
     fs-200: (
-        font-size: 26px,
-        font-size-sm: 28px,
-        font-size-md: 30px,
-        font-size-lg: 38px,
-        font-size-xl: 48px,
+        font-size: 30px,
+        font-size-lg: 36px,
+        line-height: 120%,
+    ),
+    fs-header: (
+        font-size: 160px,
         line-height: 140%,
-        line-height-xl: 120%,
+    ),
+    fs-section-title-main: (
+        font-size: 70px,
+        line-height: 120%,
+    ),
+    fs-section-title-pre: (
+        font-size: 180px,
+        line-height: 120%,
     ),
 );
 
@@ -102,7 +160,21 @@ $font-sizes: (
 // SPACING
 // =========================================================
 
-// tbd
+$sp1: 1px;
+$sp2: 2px;
+$sp3: 4px;
+$sp4: 8px;
+$sp5: 16px;
+$sp6: 24px;
+$sp7: 32px;
+$sp8: 40px;
+$sp9: 48px;
+$sp10: 56px;
+$sp11: 64px;
+$sp12: 124px;
+
+$grid: 1280px;
+$gutter: $sp5;
 
 // =========================================================
 // Z-INDEXES

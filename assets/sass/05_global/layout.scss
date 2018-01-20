@@ -2,6 +2,40 @@
 // LAYOUT CLASSES -> CAN BE USED GLOBALLY
 // =========================================================
 
-.l-foo  {
-    // 
+.l-row  {
+    max-width: $grid;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+
+    > :not([class*="l-col"]) {
+        width: 100%;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+}
+
+.l-col {
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            width: calc((100% / 12 * #{$i}) - (#{$gutter} / 12 * (12 - #{$i})));
+
+            .l-row--no-gutter & {
+                flex-grow: 1;
+                width: 100 / 12 * $i * 1%;
+            }
+        }
+    }
+}
+
+.l-push {
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            margin-left: calc((100% / 12 * #{$i}) - (#{$gutter} / 12 * (12 - #{$i})));
+        }
+    }
 }
