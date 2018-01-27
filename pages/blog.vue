@@ -4,16 +4,18 @@
 
         <div class="l-row">
             <div class="l-col l-col--6" v-for="teaser in posts.results">
-                <app-blog-teaser :abstract="teaser.data.abstract[0].text" :year="teaser.first_publication_date|year" :month="teaser.first_publication_date|month" :key="teaser.id" :background-url="teaser.data.teaser_image.url"></app-blog-teaser>
+                <app-blog-teaser
+                        :abstract="teaser.data.abstract[0].text"
+                        :year="teaser.first_publication_date|year"
+                        :month="teaser.first_publication_date|month"
+                        :key="teaser.id"
+                        :background-url="teaser.data.teaser_image.url"
+                        :slug="teaser.slugs[0]"
+                        :id="teaser.id"
+                ></app-blog-teaser>
             </div>
         </div>
 
-        <div v-for="post in posts.results">
-            {{post.data.titel[0].text}}
-            <div v-for="img in post.data.galerie">
-                <img :src="img.image.url" alt="">
-            </div>
-        </div>
     </main>
 </template>
 

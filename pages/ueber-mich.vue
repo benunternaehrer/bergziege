@@ -20,6 +20,31 @@ export default {
    components: {
        'app-section-title': SectionTitle,
    },
+    beforeCreate() {
+        console.log('this');
+        console.log(this);
+    },
+    beforeMount() {
+        console.log('this');
+        console.log(this);
+    },
+    beforeNuxtRender() {
+        console.log('this');
+        console.log(this);
+    },
+    _onNuxtLoaded() {
+        console.log('this');
+        console.log(this);
+    },
+    onNuxtReady() {
+        console.log('this');
+        console.log(this);
+    },
+    mounted() {
+        console.log('this');
+        console.log(this);
+    },
+
 };
 </script>
 

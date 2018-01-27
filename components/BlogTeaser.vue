@@ -3,7 +3,7 @@
         <div class="c-blog-teaser__content">
             <h4 class="c-blog-teaser__date">{{ month }}<br>{{ year }}</h4>
             <p class="c-blog-teaser__abstract">{{ abstract }}</p>
-            <app-button text="Lesen" modifier="small"></app-button>
+            <button class="c-button c-button--small" @click="route">Lesen</button>
         </div>
     </article>
 </template>
@@ -22,7 +22,20 @@ export default {
         month: String,
         abstract: String,
         backgroundUrl: null,
+        slug: String,
+        id: String,
     },
+    methods: {
+        route(e){
+            console.log('clicked @route');
+            console.log(this.id);
+            this.$router.push(
+                {
+                    path: this.id,
+                }
+            )
+        }
+    }
 }
 </script>
 
