@@ -1,20 +1,24 @@
 <template>
-    <main class="l-row">
+    <main class="l-row l-content-w">
         <div class="l-col l-col--8 l-push--2">
             <app-section-title titleMain="Kontakt" text-align="center"></app-section-title>
             <p class="c-article">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae.
             </p>
+            <app-contact-form></app-contact-form>
+
         </div>
     </main>
 </template>
 
 <script>
 import SectionTitle from '~/components/SectionTitle.vue';
+import ContactForm from '~/components/ContactForm.vue';
 
 export default {
    components: {
        'app-section-title': SectionTitle,
+       'app-contact-form': ContactForm,
    },
 };
 </script>

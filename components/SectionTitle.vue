@@ -1,6 +1,6 @@
 <template>
     <div class="c-section-title" :class="classModifier">
-        <h3 class="c-section-title__pre">{{ titlePre }}</h3>
+        <h3 v-if="titlePre" class="c-section-title__pre">{{ titlePre }}xxx</h3>
         <h2 class="c-section-title__main">{{ titleMain }}</h2>
     </div>
 </template>
@@ -16,6 +16,10 @@ export default {
             this.textAlign ? modifier += ` c-section-title--${this.textAlign}` : '';
             return modifier;
         }
+    },
+    created(){
+        console.log(this.props);
+        console.log(this.titlePre);
     }
 }
 </script>

@@ -1,18 +1,12 @@
 <template>
     <header class="c-header" :style="{ backgroundPositionY: `${imgTop}px`}">
-        <app-navigation></app-navigation>
-        <h1 class="c-header__title" :style="{ top: `calc(55% + ${top}px`}">Sky is the limit</h1>
     </header>
 </template>
 
 <script>
-import Navigation from '~/components/navigation.vue';
 
 export default {
     name: 'Header',
-    components: {
-        'app-navigation': Navigation,
-    },
     data() {
         return {
             top: 4,
@@ -42,6 +36,7 @@ export default {
     background-size: cover;
     background-attachment: scroll;
 
+    /**
     &::before {
         position: absolute;
         width: 100%;
@@ -55,7 +50,9 @@ export default {
         background-size: cover;
         opacity: 0.9;
     }
+    **/
 
+    /**
     &::after {
         position: absolute;
         background-image: url('~/assets/images/border-bottom.png');
@@ -67,10 +64,11 @@ export default {
         left: 0;
         content: '';
     }
+    **/
 
 
 }
-
+/**
 .c-header__title {
     @include font(tertiary);
     @include font-size(fs-header);
@@ -80,4 +78,5 @@ export default {
     position: absolute;
     transform: translateY(-110%);
 }
+**/
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <main class="l-row">
+    <main class="l-row l-content-w">
         <div class="l-col l-col--8 l-push--2">
             <app-section-title titleMain="About me" titlePre="Balz Rieser" text-align="center"></app-section-title>
             <p class="c-article">

@@ -12,7 +12,7 @@
             <router-link class="c-nav__link" to="/">Home</router-link>
             <router-link class="c-nav__link" to="/ueber-mich">Über mich</router-link>
             <router-link class="c-nav__link c-nav__link--logo" to="/">
-                <img class="c-nav__logo" src="~/assets/images/logo_balz-rieser.svg" alt="Balz Rieser, Bergführeraspirant SBV">
+                <img class="c-nav__logo" src="~/assets/images/balz-rieser.svg" alt="Balz Rieser, Bergführeraspirant SBV">
             </router-link>
             <router-link class="c-nav__link" to="/blog">Blog</router-link>
             <router-link class="c-nav__link" to="/kontakt">Kontakt</router-link>
@@ -27,8 +27,23 @@
 .c-nav {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 150px;
     padding-top: $sp6;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: $color-primary--dark;
+        position: absolute;
+        top: 0;
+        border-bottom: 1px solid $color-white;
+    }
 }
 
 .c-nav__link {
@@ -43,7 +58,7 @@
 }
 
 .c-nav__logo {
-    height: 160px;
+    height: 120px;
 }
 
 .c-nav__social {

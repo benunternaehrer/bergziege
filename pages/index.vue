@@ -1,9 +1,10 @@
 <template>
-    <main class="c-main">
+    <div>
+    <app-header></app-header>
 
-        <div class="l-row">
+        <div class="l-row l-content-w">
             <div class="l-col l-col--12">
-                <app-section-title titleMain="About me" titlePre="Balz Rieser" text-align="center"></app-section-title>
+                <app-section-title titleMain="About me" text-align="center"></app-section-title>
             </div>
             <div class="l-col l-col--12">
                 <p class="c-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque eligendi eveniet explicabo fuga in ipsam labore laborum magnam mollitia nobis odit qui quia recusandae repudiandae sequi soluta, vel vero.</p>
@@ -13,39 +14,42 @@
             </div>
         </div>
 
-        <br><br><br><br>
 
-        <div class="l-row">
-            <div class="l-col l-col--11 l-push l-push--1">
-                <app-section-title titleMain="Blog" titlePre="Follow me" text-align="center"></app-section-title>
+        <div class="l-content-w">
+            <div class="l-row">
+                <div class="l-col l-col--12">
+                    <app-section-title titleMain="Blog" text-align="center"></app-section-title>
+                </div>
             </div>
-        </div>
-        <div class="l-row">
-            <div class="l-col l-col--6" v-for="teaser in posts.results">
-                <app-blog-teaser
-                        :abstract="teaser.data.abstract[0].text"
-                        :year="teaser.first_publication_date|year"
-                        :month="teaser.first_publication_date|month"
-                        :key="teaser.id"
-                        :background-url="teaser.data.teaser_image.url"
-                        :slug="teaser.slugs[0]"
-                        :id="teaser.id"
-                ></app-blog-teaser>
+            <div class="l-row">
+                <div class="l-col l-col--6" v-for="teaser in posts.results">
+                    <app-blog-teaser
+                            :abstract="teaser.data.abstract[0].text"
+                            :year="teaser.first_publication_date|year"
+                            :month="teaser.first_publication_date|month"
+                            :key="teaser.id"
+                            :background-url="teaser.data.teaser_image.url"
+                            :slug="teaser.slugs[0]"
+                            :id="teaser.id"
+                    ></app-blog-teaser>
+                </div>
+            </div>
+
+            <div class="l-row">
+                <div class="l-col l-col--12 u-ta-center">
+                    <nuxt-link to="/blog" class="c-button">Alle Posts</nuxt-link>
+                </div>
             </div>
         </div>
 
-        <div class="l-row">
-            <div class="l-col l-col--12 u-ta-center">
-                <nuxt-link to="/blog" class="c-button">Alle Posts</nuxt-link>
-            </div>
-        </div>
-    </main>
+    </div>
 </template>
 
 <script>
 import SectionTitle from '~/components/SectionTitle.vue';
 import Button from '~/components/Button.vue';
 import BlogTeaser from '~/components/BlogTeaser.vue';
+import Header from '~/components/Header.vue';
 
 import axios from 'axios';
 import * as moment from 'moment';
@@ -58,6 +62,7 @@ export default {
         'app-section-title': SectionTitle,
         'app-button': Button,
         'app-blog-teaser': BlogTeaser,
+        'app-header': Header,
     },
     data() {
         return {
@@ -91,6 +96,8 @@ export default {
 
     .c-main {
         position: relative;
+
+        /**
         &::after {
             position: absolute;
             background-color: $color-white;
@@ -104,7 +111,7 @@ export default {
             z-index: -1;
             opacity: 0.25;
         }
-
+        **/
     }
 
     .c-lead {

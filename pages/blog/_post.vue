@@ -1,56 +1,50 @@
 <template>
-    <div>
-        <h1>Blog post 1</h1>
-        blablabla
+    <div class="l-row">
+        <app-section-title :titleMain="post.data.titel[0].text"></app-section-title>
 
+        {{post.data.titel[0].text}}
+        {{post.data.inhalt[0].text}}
+        <br>
+        <br>
+        <ul>
+            <li v-for="image in post.data.galerie">
+                <img :src="image.image.url" :alt="image.image.alt">
+            </li>
+        </ul>
     </div>
 </template>
 
 
 <script>
-import axios from 'axios';
-import 'moment/locale/de-ch';
+    import axios from 'axios';
+    import 'moment/locale/de-ch';
+    import SectionTitle from '~/components/SectionTitle.vue';
 
-let url = 'https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.type,+"blog_post")]]#format=json';
-
-export default {
-    name: 'PostEntry',
-    data() {
-        return {
-            post: null
-        }
-    },
-    beforeCreate() {
-        console.log('this');
-        console.log(this);
-    },
-    beforeMount() {
-        console.log('this');
-        console.log(this);
-    },
-    beforeNuxtRender() {
-        console.log('this');
-        console.log(this);
-    },
-    _onNuxtLoaded() {
-        console.log('this');
-        console.log(this);
-    },
-    onNuxtReady() {
-        console.log('this');
-        console.log(this);
-    },
-    mounted() {
-        console.log('this');
-        console.log(this);
-    },
-    // async asyncData ({ params }) {
-    //     let { data } = await axios.get(url);
-    //     console.log('data2222');
-    //     console.log(data);
-    //     return { post: data }
-    // },
-}
+    let url = '';
+    export default {
+        name: 'PostEntry',
+        components: {
+            'app-section-title': SectionTitle,
+        },
+        data() {
+            return {
+                post: null
+            }
+        },
+        beforeCreate() {
+            console.log('this1');
+            console.log(this);
+        },
+        created(){
+            console.log('this2');
+            console.log(this);
+        },
+        async asyncData ({ params }) {
+            const [slug, id]  = params.post.split('--');
+            let { data } = await axios.get(`https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.id,+"${id}")]]#format=json`);
+            return { post: data.results[0] }
+        },
+    }
 </script>
 
 <style>

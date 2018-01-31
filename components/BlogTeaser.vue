@@ -27,11 +27,9 @@ export default {
     },
     methods: {
         route(e){
-            console.log('clicked @route');
-            console.log(this.id);
             this.$router.push(
                 {
-                    path: this.id,
+                    path: `/blog/${this.slug}--${this.id}`
                 }
             )
         }

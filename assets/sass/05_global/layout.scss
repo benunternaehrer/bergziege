@@ -16,6 +16,8 @@
 
     &--center {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -38,4 +40,9 @@
             margin-left: calc((100% / 12 * #{$i}) - (#{$gutter} / 12 * (12 - #{$i})));
         }
     }
+}
+
+.l-content-w {
+    padding-top: $sp8;
+    padding-bottom: $sp12;
 }
