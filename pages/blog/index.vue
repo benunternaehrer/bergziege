@@ -44,8 +44,6 @@
 
         async asyncData ({ params }) {
             let { data } = await axios.get(url);
-            console.log('data');
-            console.log(data);
             return { posts: data }
         },
         filters: {

@@ -17,10 +17,6 @@ export default {
             return modifier;
         }
     },
-    created(){
-        console.log(this.props);
-        console.log(this.titlePre);
-    }
 }
 </script>
 

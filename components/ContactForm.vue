@@ -1,5 +1,5 @@
 <template>
-    <form name="contact" data-netlify="true" class="c-contact-form l-row l-row--center">
+    <form name="contact" netlify action="thank-you" class="c-contact-form l-row l-row--center">
         <div class="l-col l-col--6">
             <input class="c-input" name="name" type="text" placeholder="Vor- und Nachname">
             <input class="c-input" name="email" type="email" placeholder="E-Mail">

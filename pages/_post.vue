@@ -31,18 +31,8 @@
                 post: null
             }
         },
-        beforeCreate() {
-            console.log('this1');
-            console.log(this);
-            console.log(this.$route);
-        },
-        created(){
-            console.log(this.$route.params.post);
-        },
         async asyncData ({ params }) {
             let { data } = await axios.get(`https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.id,+"${params.post}")]]#format=json`);
-            console.log('data2222');
-            console.log(data);
             return { post: data.results[0] }
         },
     }
