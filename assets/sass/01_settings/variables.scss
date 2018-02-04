@@ -82,6 +82,8 @@ $fonts: (
         name: 'Roboto',
         fallback: (Helvetica, sans-serif),
         weights: (
+            light: 300,
+            regular: 400,
             bold: 700,
             black: 900,
         ),
@@ -123,6 +125,12 @@ $font-sizes: (
         font-size-xl: 26px,
         line-height: 100%
     ),
+    fs-180: (
+        font-size: 26px,
+        font-size-md: 30px,
+        font-size-xl: 34px,
+        line-height: 100%
+    ),
     fs-200: (
         font-size: 36px,
         font-size-lg: 56px,
@@ -150,6 +158,7 @@ $sp8: 40px;
 $sp9: 48px;
 $sp10: 56px;
 $sp11: 64px;
+$sp12: 96px;
 $sp12: 124px;
 $sp13: 188px;
 

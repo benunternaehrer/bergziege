@@ -23,6 +23,7 @@
                 <div class="l-col l-col--6" v-for="teaser in posts.results">
                     <app-blog-teaser
                             :abstract="teaser.data.abstract[0].text"
+                            :title="teaser.data.titel[0].text"
                             :year="teaser.first_publication_date|year"
                             :month="teaser.first_publication_date|month"
                             :key="teaser.id"
@@ -35,7 +36,7 @@
 
             <div class="l-row">
                 <div class="l-col l-col--12 u-ta-center">
-                    <nuxt-link to="/blog" class="c-button">Alle Posts</nuxt-link>
+                    <nuxt-link to="/blog" class="c-button">Mehr Posts</nuxt-link>
                 </div>
             </div>
         </div>
@@ -49,11 +50,10 @@
     import BlogTeaser from '~/components/BlogTeaser.vue';
     import Header from '~/components/Header.vue';
 
-    import axios from 'axios';
     import * as moment from 'moment';
     import 'moment/locale/de-ch';
-    //
-    let url = 'https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.type,+"blog_post")]]#format=json';
+
+    import { Prismic } from '../prismic.js';
 
     export default {
         components: {
@@ -69,7 +69,8 @@
         },
 
         async asyncData ({ params }) {
-            let { data } = await axios.get(url);
+            let prismic = new Prismic();
+            let { data } = await prismic.getPosts();
             return { posts: data }
         },
         filters: {

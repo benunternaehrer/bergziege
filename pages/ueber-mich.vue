@@ -1,7 +1,7 @@
 <template>
     <main class="l-row l-content-w">
         <div class="l-col l-col--8 l-push--2">
-            <app-section-title titleMain="About me" titlePre="Balz Rieser" text-align="center"></app-section-title>
+            <app-section-title titleMain="About me" text-align="center"></app-section-title>
             <p class="c-article">
                 Bewegung, Vielseitigkeit und das Arbeiten im Freien waren schon immer wichtig in meinem Leben. Deshalb entschied ich mich für die Ausbildung als Zimmermann, welche ich im Jahr 2005 abschloss. Die Arbeit stillte meinen Drang nach Bewegung und Abwechslung ganz gut, meine Erfüllung fand ich aber an den Wochenenden in den Bergen. Ob Winter oder Sommer, ob Fels oder Schnee – so oft es ging, zog es mich mit Freunden in die wunderbare Bergwelt.
             </p>

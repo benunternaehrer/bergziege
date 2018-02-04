@@ -1,8 +1,11 @@
 <template>
     <article class="c-blog-teaser" :style="{ backgroundImage: `url(${backgroundUrl})` }">
         <div class="c-blog-teaser__content">
-            <h4 class="c-blog-teaser__date">{{ month }} {{ year }}</h4>
-            <p class="c-blog-teaser__abstract">{{ abstract }}</p>
+            <h4 class="c-blog-teaser__date">
+                <span class="c-blog-teaser__date-month">{{ month }}</span>&nbsp;
+                <span class="c-blog-teaser__date-year">{{ year }}</span>
+            </h4>
+            <h3 class="c-blog-teaser__title">{{ title }}</h3>
             <button class="c-button c-button--small" @click="route">Lesen</button>
         </div>
     </article>
@@ -21,6 +24,7 @@ export default {
         year: String,
         month: String,
         abstract: String,
+        title: String,
         backgroundUrl: null,
         slug: String,
         id: String,
@@ -29,7 +33,7 @@ export default {
         route(e){
             this.$router.push(
                 {
-                    path: `/blog/${this.slug}--${this.id}`
+                    path: `/${this.slug}--${this.id}`
                 }
             )
         }
@@ -43,7 +47,7 @@ export default {
 .c-blog-teaser {
     background-size: cover;
     padding: $sp8;
-    height: 520px;
+    height: 420px;
     position: relative;
     margin-bottom: $sp9;
 
@@ -61,7 +65,7 @@ export default {
 
 .c-blog-teaser__content {
     height: 100%;
-    text-align: center;
+    text-align: left;
     color: $color-white;
     position: relative;
     z-index: 2;
@@ -69,7 +73,7 @@ export default {
 
 
 .c-blog-teaser__date {
-    @include font(secondary, black, null, fs-160);
+    @include font-size(fs-180);
     position: relative;
     text-transform: uppercase;
     margin-bottom: $sp11;
@@ -87,7 +91,16 @@ export default {
     }
 }
 
-.c-blog-teaser__abstract {
+.c-blog-teaser__date-month {
+    @include font(secondary, light);
+}
+
+.c-blog-teaser__date-year {
+    @include font(secondary, bold);
+}
+
+
+.c-blog-teaser__title {
     @include font-size(fs-140);
     margin-bottom: $sp11;
 }

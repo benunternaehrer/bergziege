@@ -26,7 +26,6 @@ export default {
 @import "../assets/sass/import-variables.scss";
 
 .c-main {
-    min-height: 100vh;
 
     &::after {
         position: fixed;

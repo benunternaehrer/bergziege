@@ -6,7 +6,7 @@ module.exports = {
     head: {
         link: [
             {
-                rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:700,900'
+                rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:700,900,300,400'
             }
         ]
     },

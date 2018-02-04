@@ -1,6 +1,5 @@
 <template>
     <div class="c-section-title" :class="classModifier">
-        <h3 v-if="titlePre" class="c-section-title__pre">{{ titlePre }}xxx</h3>
         <h2 class="c-section-title__main">{{ titleMain }}</h2>
     </div>
 </template>
@@ -27,7 +26,7 @@ export default {
 .c-section-title {
     position: relative;
     margin-top: 2em;
-    margin-bottom: $sp8;
+    margin-bottom: $sp11;
 
     &--center {
         text-align: center;
@@ -43,7 +42,6 @@ export default {
     .c-section-title--negative & {
         color: $color-white;
     }
-
 
     &::after {
         $line-width: 180px;

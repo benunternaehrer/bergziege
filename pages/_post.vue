@@ -16,11 +16,11 @@
 
 
 <script>
-    import axios from 'axios';
     import 'moment/locale/de-ch';
     import SectionTitle from '~/components/SectionTitle.vue';
 
-    let url = '';
+    import { Prismic } from '../prismic.js';
+
     export default {
         name: 'PostEntry',
         components: {
@@ -32,7 +32,8 @@
             }
         },
         async asyncData ({ params }) {
-            let { data } = await axios.get(`https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.id,+"${params.post}")]]#format=json`);
+            let postId = params.post.split('--')[1];
+            let { data } = await new Prismic().getPost(postId);
             return { post: data.results[0] }
         },
     }

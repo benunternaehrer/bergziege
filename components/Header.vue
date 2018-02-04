@@ -40,26 +40,26 @@ export default {
 
     .c-header__inner-w {
         display: flex;
-        height: 120px;
+        height: 110px;
         justify-content: space-between;
         align-items: center;
     }
 
     .c-header__logo-w {
-
+        line-height: 0;
     }
 
     .c-header__logo-link {
-
+        display: inline-block;
     }
 
     .c-header__logo {
-        width: 220px;
+        width: 210px;
         fill: yellow;
     }
 
     .c-header__nav {
-        @include font(secondary, bold);
+        @include font(secondary, bold, null, fs-80);
         text-transform: uppercase;
         color: $color-white;
         height: 100%;
@@ -91,9 +91,18 @@ export default {
         }
     }
 
+    .c-header__social {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
     .c-header__social-link {
         display: inline-block;
+        padding-top: $sp6;
         padding-right: $sp3;
+        padding-bottom: $sp6;
         padding-left: $sp3;
     }
 
