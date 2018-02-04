@@ -5,7 +5,6 @@
                 <app-section-title title-main="Contact" modifier="negative" text-align="center"></app-section-title>
             </div>
         </div>
-        <app-contact-form></app-contact-form>
         <div class="c-footer__sponsors l-row">
             <div class="l-col l-col--6">
                 <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-abs.jpg" alt="ABS">
@@ -19,13 +18,11 @@
 
 <script>
 import SectionTitle from '~/components/SectionTitle.vue';
-import ContactForm from '~/components/ContactForm.vue';
 
 export default {
     name: 'Footer',
     components: {
         'app-section-title': SectionTitle,
-        'app-contact-form': ContactForm,
     },
     data() {
         return {
@@ -52,6 +49,22 @@ export default {
 @import "../assets/sass/import-variables.scss";
 
 .c-footer {
+    background-color: $color-primary;
+}
+
+
+.c-footer__sponsor {
+    text-align: center;
+}
+
+.c-footer__sponsor {
+    filter: grayscale(1);
+    mix-blend-mode: luminosity;
+    max-width: 240px;
+}
+/**
+.c-footer {
+
     min-height: 1000px;
     position: relative;
     z-index: 2;
@@ -69,7 +82,7 @@ export default {
         top: 0;
         left: 0;
         content: '';
-        /*background-image: url('~/assets/images/background-1.jpg');*/
+        background-image: url('~/assets/images/background-1.jpg');
         background-color: $color-primary--dark;
         background-blend-mode: multiply;
         mix-blend-mode: multiply;
@@ -77,7 +90,6 @@ export default {
         z-index: -1;
     }
 
-    /**
     &::after {
         position: absolute;
         background-image: url('~/assets/images/border-top.png');
@@ -90,16 +102,7 @@ export default {
         content: '';
         z-index: 1;
     }
-    **/
 }
 
-.c-footer__sponsor {
-    text-align: center;
-}
-
-.c-footer__sponsor {
-    filter: grayscale(1);
-    mix-blend-mode: luminosity;
-    max-width: 240px;
-}
+**/
 </style>

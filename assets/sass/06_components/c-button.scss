@@ -1,10 +1,11 @@
 .c-button {
-    @include font(secondary, normal, null, fs-160);
+    @include font(secondary, bold, null, fs-160);
     display: inline-block;
     min-width: 230px;
-    border: 2px solid currentColor;
-    border-radius: 5px;
-    color: $color-primary;
+    //border: 2px solid currentColor;
+    border-radius: 30px;
+    color: $color-white;
+    background-color: $color-secondary;
     padding-top: $sp5;
     padding-left: $sp4;
     padding-bottom: $sp5 + 1px;
@@ -17,7 +18,11 @@
         padding-top: $sp4;
         padding-bottom: $sp4 + 2px;
         @include font-size(fs-100);
-        color: $color-white;
         min-width: 180px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $color-secondary--active;
     }
 }

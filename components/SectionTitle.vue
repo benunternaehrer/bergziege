@@ -27,38 +27,34 @@ export default {
 .c-section-title {
     position: relative;
     margin-top: 2em;
-    margin-bottom: $sp7;
+    margin-bottom: $sp8;
 
     &--center {
         text-align: center;
     }
 }
 
-.c-section-title__pre {
-    @include font(tertiary, normal, null, fs-section-title-pre);
-    position: absolute;
-    top: -70%;
-    color: $color-secondary;
-    opacity: 0.2;
-    left: -0.2em;
-
-    .c-section-title--negative & {
-        opacity: 0.1;
-        color: $color-white;
-    }
-
-    .c-section-title--center & {
-        left: auto;
-        width: 100%;
-    }
-}
 
 .c-section-title__main {
-    @include font(secondary, normal, null, fs-section-title-main);
+    @include font(secondary, bold, null, fs-section-title-main);
     color: $color-primary;
+    position: relative;
 
     .c-section-title--negative & {
         color: $color-white;
+    }
+
+
+    &::after {
+        $line-width: 180px;
+        content: '';
+        height: 3px;
+        background-color: $color-secondary;
+        width: $line-width;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-#{$line-width / 2});
     }
 }
 </style>

@@ -1,7 +1,5 @@
 <template>
     <div>
-    <app-header></app-header>
-
         <div class="l-row l-content-w">
             <div class="l-col l-col--12">
                 <app-section-title titleMain="About me" text-align="center"></app-section-title>
@@ -46,47 +44,47 @@
 </template>
 
 <script>
-import SectionTitle from '~/components/SectionTitle.vue';
-import Button from '~/components/Button.vue';
-import BlogTeaser from '~/components/BlogTeaser.vue';
-import Header from '~/components/Header.vue';
+    import SectionTitle from '~/components/SectionTitle.vue';
+    import Button from '~/components/Button.vue';
+    import BlogTeaser from '~/components/BlogTeaser.vue';
+    import Header from '~/components/Header.vue';
 
-import axios from 'axios';
-import * as moment from 'moment';
-import 'moment/locale/de-ch';
-//
-let url = 'https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.type,+"blog_post")]]#format=json';
+    import axios from 'axios';
+    import * as moment from 'moment';
+    import 'moment/locale/de-ch';
+    //
+    let url = 'https://bergziege.prismic.io/api/v2/documents/search?ref=WmM_HykAAN_K4BkH&q=[[at(document.type,+"blog_post")]]#format=json';
 
-export default {
-    components: {
-        'app-section-title': SectionTitle,
-        'app-button': Button,
-        'app-blog-teaser': BlogTeaser,
-        'app-header': Header,
-    },
-    data() {
-        return {
-            posts: null
-        }
-    },
-
-    async asyncData ({ params }) {
-        let { data } = await axios.get(url);
-        return { posts: data }
-    },
-    filters: {
-        month(data) {
-            let date = new Date(data);
-            moment.locale('de-ch');
-            return moment(date).format('MMMM');
+    export default {
+        components: {
+            'app-section-title': SectionTitle,
+            'app-button': Button,
+            'app-blog-teaser': BlogTeaser,
+            'app-header': Header,
         },
-        year(data) {
-            let date = new Date(data);
-            return date.getFullYear().toString();
-        }
-    }
+        data() {
+            return {
+                posts: null
+            }
+        },
 
-}
+        async asyncData ({ params }) {
+            let { data } = await axios.get(url);
+            return { posts: data }
+        },
+        filters: {
+            month(data) {
+                let date = new Date(data);
+                moment.locale('de-ch');
+                return moment(date).format('MMMM');
+            },
+            year(data) {
+                let date = new Date(data);
+                return date.getFullYear().toString();
+            }
+        }
+
+    }
 </script>
 
 <style lang="scss" type="text/scss">

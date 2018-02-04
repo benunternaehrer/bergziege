@@ -1,13 +1,5 @@
 <template>
     <navigation class="c-nav">
-        <div class="c-nav__social">
-            <a class="c-nav__social-link" href="https://facebook.com">
-                <img class="c-nav__social-img" src="~/assets/images/facebook-f.svg" alt="Facebook">
-            </a>
-            <a class="c-nav__social-link" href="https://instagram.com">
-                <img class="c-nav__social-img" src="~/assets/images/instagram.svg" alt="Instagram">
-            </a>
-        </div>
         <div class="c-nav__main">
             <router-link class="c-nav__link" to="/">Home</router-link>
             <router-link class="c-nav__link" to="/ueber-mich">Über mich</router-link>
@@ -47,7 +39,7 @@
 }
 
 .c-nav__link {
-    @include font(secondary, normal, null, fs-100);
+    @include font(secondary, bold, null, fs-100);
     margin-left: $sp5;
     margin-right: $sp5;
 

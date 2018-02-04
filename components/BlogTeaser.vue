@@ -1,7 +1,7 @@
 <template>
     <article class="c-blog-teaser" :style="{ backgroundImage: `url(${backgroundUrl})` }">
         <div class="c-blog-teaser__content">
-            <h4 class="c-blog-teaser__date">{{ month }}<br>{{ year }}</h4>
+            <h4 class="c-blog-teaser__date">{{ month }} {{ year }}</h4>
             <p class="c-blog-teaser__abstract">{{ abstract }}</p>
             <button class="c-button c-button--small" @click="route">Lesen</button>
         </div>
@@ -43,43 +43,53 @@ export default {
 .c-blog-teaser {
     background-size: cover;
     padding: $sp8;
-    height: 360px;
+    height: 520px;
     position: relative;
     margin-bottom: $sp9;
 
-    &::before {
+    &::after {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(90deg, rgba(13,50,59,0.2) 0%, #0D323B 90%);
+        background-image: linear-gradient(-180deg, rgba(60,60,60,0) 40%, rgba(60,60,60,1) 100%);
+        mix-blend-mode: multiply;
     }
 }
 
 .c-blog-teaser__content {
-    position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: right;
+    text-align: center;
     color: $color-white;
-    justify-content: flex-end;
-    align-content: space-between;
+    position: relative;
     z-index: 2;
-    padding-left: 20%;
 }
 
 
 .c-blog-teaser__date {
-    @include font(secondary, normal, null, fs-200);
-    align-self: flex-end;
+    @include font(secondary, black, null, fs-160);
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: $sp11;
+
+    &::after {
+        $line-width: 120px;
+        content: '';
+        height: 2px;
+        background-color: $color-white;
+        width: $line-width;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-#{$line-width / 2});
+    }
 }
 
 .c-blog-teaser__abstract {
-    align-self: flex-end;
+    @include font-size(fs-140);
+    margin-bottom: $sp11;
 }
 
 </style>

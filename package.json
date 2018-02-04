@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "moment": "^2.20.1",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.3.0"
   },
   "devDependencies": {
     "node-sass": "^4.7.2",

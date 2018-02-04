@@ -1,7 +1,7 @@
 <template>
-    <div class="c-main">
-        <app-navigation></app-navigation>
-        <div>
+    <div>
+        <app-header></app-header>
+        <div class="c-main">
             <nuxt/>
         </div>
         <app-footer></app-footer>
@@ -10,13 +10,13 @@
 
 
 <script>
-import Navigation from '~/components/navigation.vue';
 import Footer from '~/components/Footer.vue';
+import Header from '~/components/Header.vue';
 
 export default {
     components: {
         'app-footer': Footer,
-        'app-navigation': Navigation,
+        'app-header': Header,
     },
 }
 
@@ -26,18 +26,10 @@ export default {
 @import "../assets/sass/import-variables.scss";
 
 .c-main {
-    /**
-    background-image: url('~/assets/images/background-1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
     min-height: 100vh;
-    margin-top: 150px;
-    position: static !important;
-    **/
-    padding-top: 150px;
 
     &::after {
-        position: absolute;
+        position: fixed;
         background-image: url('~/assets/images/background-1.jpg');
         background-size: cover;
         background-attachment: fixed;
