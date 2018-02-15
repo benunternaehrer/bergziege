@@ -2,13 +2,13 @@
     <div>
         <div class="l-row l-content-w">
             <div class="l-col l-col--12">
-                <app-section-title titleMain="About me" text-align="center"></app-section-title>
+                <app-section-title titleMain="Under construction" text-align="center"></app-section-title>
             </div>
             <div class="l-col l-col--12">
-                <p class="c-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque eligendi eveniet explicabo fuga in ipsam labore laborum magnam mollitia nobis odit qui quia recusandae repudiandae sequi soluta, vel vero.</p>
+                <p class="c-lead">Die Seite befindet sich gerade im Aufbau. Bitte schauen Sie bald wieder vorbei.</p>
             </div>
             <div class="l-col l-col--12 u-ta-center">
-                <nuxt-link to="/ueber-mich" class="c-button">Mehr</nuxt-link>
+                <!--<nuxt-link to="/ueber-mich" class="c-button">Mehr</nuxt-link>-->
             </div>
         </div>
 
