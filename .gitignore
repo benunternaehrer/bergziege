@@ -60,3 +60,6 @@ typings/
 # nuxt build
 .nuxt
 dist
+
+#custom
+.idea

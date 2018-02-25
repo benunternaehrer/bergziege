@@ -33,7 +33,9 @@
 }
 
 .l-col--12\@md {
-    width: calc((100%) - (#{$gutter} / 12));
+    @include size(md-down) {
+        width: calc((100%) - (#{$gutter} / 12));
+    }
 }
 
 .l-push {
