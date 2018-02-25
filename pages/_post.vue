@@ -1,16 +1,25 @@
 <template>
-    <div class="l-row">
-        <app-section-title :titleMain="post.data.titel[0].text"></app-section-title>
+    <div>
+        <div class="c-image">
+            <img :src="post.data.teaser_image.url" class="c-image__img">
+        </div>
 
-        {{post.data.titel[0].text}}
-        {{post.data.inhalt[0].text}}
-        <br>
-        <br>
-        <ul>
-            <li v-for="image in post.data.galerie">
-                <img :src="image.image.url" :alt="image.image.alt">
-            </li>
-        </ul>
+        <div class="l-row c-post">
+            <div class="l-content-w-narrow">
+                <app-section-title :titleMain="post.data.titel[0].text" :textAlign="'center'"></app-section-title>
+
+                <div class="c-post__text">
+                    <p class="c-post__paragraph" v-for="text in post.data.inhalt">
+                        {{text.text}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="c-gallery">
+            <img v-for="image in post.data.galerie" class="c-gallery__img" v-img:gallery="{title: image.gallery_image.alt, src: image.gallery_image.url}" :src="image.gallery_image.thumbnail.url" :alt="image.gallery_image.alt">
+        </div>
+
     </div>
 </template>
 
@@ -39,6 +48,19 @@
     }
 </script>
 
-<style>
+<style lang="scss" type="text/scss">
+@import "../assets/sass/import-variables.scss";
+
+.c-post {
+
+}
+
+.c-post__text {
+    margin-bottom: $sp11;
+}
+
+.c-post__paragraph {
+    margin-bottom: $sp5;
+}
 
 </style>

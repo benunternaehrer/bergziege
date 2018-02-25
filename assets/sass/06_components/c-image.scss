@@ -1,0 +1,17 @@
+.c-image {
+    position: relative;
+    margin-bottom: $sp11;
+    border-bottom: 2px solid $color-secondary--line;
+    border-top: 2px solid $color-primary;
+    line-height: 0;
+
+    @include size(md-down) {
+        margin-bottom: $sp8;
+    }
+}
+
+.c-image__img {
+    max-height: 45vh;
+    width: 100%;
+    object-fit: cover;
+}

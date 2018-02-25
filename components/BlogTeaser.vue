@@ -6,7 +6,9 @@
                 <span class="c-blog-teaser__date-year">{{ year }}</span>
             </h4>
             <h3 class="c-blog-teaser__title">{{ title }}</h3>
-            <button class="c-button c-button--small" @click="route">Lesen</button>
+            <div>
+                <app-button :text="'Lesen'" :modifier="'small'" @click.native="route"></app-button>
+            </div>
         </div>
     </article>
 </template>
@@ -31,6 +33,7 @@ export default {
     },
     methods: {
         route(e){
+            console.log('xxx');
             this.$router.push(
                 {
                     path: `/${this.slug}--${this.id}`
@@ -61,6 +64,11 @@ export default {
         background-image: linear-gradient(-180deg, rgba(60,60,60,0) 40%, rgba(60,60,60,1) 100%);
         mix-blend-mode: multiply;
     }
+
+    @include size(md-down) {
+        height: 320px;
+        padding: $sp6;
+    }
 }
 
 .c-blog-teaser__content {
@@ -69,25 +77,28 @@ export default {
     color: $color-white;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 
 .c-blog-teaser__date {
-    @include font-size(fs-180);
+    @include font-size(fs-100);
     position: relative;
     text-transform: uppercase;
-    margin-bottom: $sp11;
+    margin-bottom: $sp7;
 
     &::after {
-        $line-width: 120px;
+        $line-width: 100px;
         content: '';
-        height: 2px;
+        height: 1px;
         background-color: $color-white;
         width: $line-width;
         position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-#{$line-width / 2});
+        bottom: -10px;
+        left: 0;
+        // transform: translateX(-#{$line-width / 2});
     }
 }
 
@@ -101,8 +112,8 @@ export default {
 
 
 .c-blog-teaser__title {
-    @include font-size(fs-140);
-    margin-bottom: $sp11;
+    @include font-size(fs-180);
+    margin-bottom: $sp6;
 }
 
 </style>

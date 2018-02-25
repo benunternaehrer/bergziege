@@ -16,8 +16,6 @@
 
     &--center {
         justify-content: center;
-        flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -34,6 +32,10 @@
     }
 }
 
+.l-col--12\@md {
+    width: calc((100%) - (#{$gutter} / 12));
+}
+
 .l-push {
     @for $i from 1 through 12 {
         &--#{$i} {
@@ -45,4 +47,22 @@
 .l-content-w {
     margin-top: $sp13;
     margin-bottom: $sp13;
+    padding-left: $sp6;
+    padding-right: $sp6;
+
+    @include size(md-down) {
+        margin-top: $sp11;
+        margin-bottom: $sp11;
+    }
+}
+
+.l-content-w-narrow {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $gutter;
+    padding-left: $gutter;
+    @include size(xl-only) {
+        max-width: 65%
+    }
+
 }

@@ -1,15 +1,25 @@
 <template>
-    <footer class="c-footer" :style="{ backgroundPositionY: `${imgTopBottom}px`}" ref="footer">
+    <footer class="c-footer" ref="footer">
         <div class="l-row">
             <div class="l-col l-col--12">
-                <app-section-title title-main="Contact" modifier="negative" text-align="center"></app-section-title>
+                <app-section-title title-main="Kontakt" modifier="negative" text-align="center"></app-section-title>
             </div>
         </div>
-        <div class="c-footer__sponsors l-row">
-            <div class="l-col l-col--6">
-                <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-abs.jpg" alt="ABS">
+        <div class="l-row l-row--center">
+            <div class="l-col l-col--4 l-col--12@md c-footer__address">
+                <h4 class="c-footer__title">Adresse</h4>
+                <address class="c-footer__text">
+                    Balz Rieser<br>
+                    Wolfsmatt 6, 6017 Ruswil <br>
+                    <a href="mailto:balz.rieser@gmail.com" target="_blank">balz.rieser@gmail.com</a><br>
+                    +41 (0)79 4370080
+                </address>
             </div>
-            <div class="l-col l-col--6">
+            <div class="l-col l-col--1 l-col--12@md"></div>
+
+            <div class="c-footer__sponsors l-col l-col--4 l-col--12@md">
+                <h4 class="c-footer__title">Sponsoren</h4>
+                <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-abs.jpg" alt="ABS">
                 <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-huwyler.jpg" alt="Huwyler">
             </div>
         </div>
@@ -24,24 +34,6 @@ export default {
     components: {
         'app-section-title': SectionTitle,
     },
-    data() {
-        return {
-            imgTopBottom: 0,
-        }
-    },
-    methods: {
-        handleScroll: function(e) {
-            let footerOffset = this.$refs.footer.offsetTop;
-
-            if(window.scrollY + window.innerHeight > footerOffset) {
-                this.imgTopBottom = (window.scrollY + window.innerHeight - footerOffset - this.$refs.footer.scrollHeight) * .6;
-            }
-        }
-    },
-    mounted: function() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-
 }
 </script>
 
@@ -50,17 +42,46 @@ export default {
 
 .c-footer {
     background-color: $color-primary;
+    padding-bottom: $sp12;
 }
 
+
+.c-footer__title {
+    @include font(secondary, bold);
+    color: $color-white;
+    margin-bottom: $sp4;
+}
+
+.c-footer__text {
+    @include font-size(fs-80);
+    @include font(secondary, light);
+    color: $color-white;
+}
+
+.c-footer__address {
+    text-align: right;
+
+    @include size(md-down) {
+        text-align: center;
+        margin-bottom: $sp8;
+    }
+}
+
+.c-footer__sponsors {
+    @include size(md-down) {
+        text-align: center;
+    }
+}
 
 .c-footer__sponsor {
     text-align: center;
-}
-
-.c-footer__sponsor {
     filter: grayscale(1);
     mix-blend-mode: luminosity;
-    max-width: 240px;
+    max-width: 180px;
+
+    @include size(lg-up) {
+        margin-right: $sp5;
+    }
 }
 /**
 .c-footer {

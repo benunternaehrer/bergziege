@@ -47,7 +47,6 @@ class Prismic {
                 .then(() => {
                     axios.get(`${this.endpoint}/documents/search?ref=${this.masterRef}&q=[[at(document.id,+"${postId}")]]#format=json`)
                         .then((data) => {
-                            console.log(data);
                             resolve(data);
                         })
                         .catch((err) => {

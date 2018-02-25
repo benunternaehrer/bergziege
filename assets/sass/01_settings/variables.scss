@@ -87,7 +87,7 @@ $fonts: (
             bold: 700,
             black: 900,
         ),
-        letterSpacing: 0.1ch,
+        letterSpacing: 0.05ch,
     ),
 );
 
@@ -105,6 +105,12 @@ $font-sizes: (
     fs-80: (
         font-size: 14px,
         font-size-lg: 16px,
+        line-height: 160%
+    ),
+    fs-nav: (
+        font-size: 12px,
+        font-size-md: 18px,
+        font-size-xl: 20px,
         line-height: 160%
     ),
     fs-100: (
@@ -126,18 +132,15 @@ $font-sizes: (
         line-height: 100%
     ),
     fs-180: (
-        font-size: 26px,
+        font-size: 22px,
         font-size-md: 30px,
         font-size-xl: 34px,
-        line-height: 100%
-    ),
-    fs-200: (
-        font-size: 36px,
-        font-size-lg: 56px,
-        line-height: 120%,
+        line-height: 120%
     ),
     fs-section-title-main: (
-        font-size: 70px,
+        font-size: 40px,
+        font-size-md: 50px,
+        font-size-lg: 70px,
         line-height: 120%,
     ),
 );
