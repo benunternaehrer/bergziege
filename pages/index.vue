@@ -4,12 +4,9 @@
             <img src="~assets/images/main_3.jpg" class="c-image__img">
         </div>
 
-        <div class="l-row l-content-w">
+        <div class="l-row l-content-w l-content-w--sm">
             <div class="l-col l-col--12">
-                <app-section-title titleMain="Under construction" text-align="center"></app-section-title>
-            </div>
-            <div class="l-col l-col--12">
-                <p class="c-lead">Die Seite befindet sich gerade im Aufbau. Bitte schauen Sie bald wieder vorbei.</p>
+                <app-section-title titleMain="Zeit für die Berge. Zeit für Dich." text-align="center"></app-section-title>
             </div>
             <div class="l-col l-col--12 u-ta-center">
                 <nuxt-link to="/ueber-mich" class="c-button">Portrait</nuxt-link>

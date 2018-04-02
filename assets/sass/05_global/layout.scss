@@ -56,6 +56,16 @@
         margin-top: $sp11;
         margin-bottom: $sp11;
     }
+
+    &--sm {
+        margin-top: $sp11;
+        margin-bottom: $sp11;
+
+        @include size(md-down) {
+            margin-top: $sp9;
+            margin-bottom: $sp9;
+        }
+    }
 }
 
 .l-content-w-narrow {

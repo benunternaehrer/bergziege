@@ -11,8 +11,7 @@
                 <address class="c-footer__text">
                     Balz Rieser<br>
                     Wolfsmatt 6, 6017 Ruswil <br>
-                    <a href="mailto:balz.rieser@gmail.com" target="_blank">balz.rieser@gmail.com</a><br>
-                    +41 (0)79 4370080
+                    +41 (0)79 437 00 80
                 </address>
             </div>
             <div class="l-col l-col--1 l-col--12@md"></div>

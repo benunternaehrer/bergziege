@@ -21,3 +21,15 @@
         height: 150px;
     }
 }
+
+
+.prev-v-img,
+.next-v-img {
+    width: 55px !important;
+    height: 55px !important;
+}
+
+.prev-v-img svg,
+.next-v-img svg {
+    margin: 15px auto !important;
+}

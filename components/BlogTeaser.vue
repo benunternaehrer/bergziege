@@ -33,7 +33,6 @@ export default {
     },
     methods: {
         route(e){
-            console.log('xxx');
             this.$router.push(
                 {
                     path: `/${this.slug}--${this.id}`
