@@ -21,7 +21,7 @@
         </main>
 
         <div class="c-gallery">
-            <img v-for="image in images" class="c-gallery__img" v-img:gallery="{src: require('~/assets/images/about/' + image)}" :src="require('~/assets/images/about/thumbs/' + image)" :alt="'Balz Rieser'">
+            <img v-for="image in images" class="c-gallery__img" v-img:gallery="{src: require(`~/assets/images/about/${image}.jpg`)}" :src="require(`~/assets/images/about/thumbs/${image}_thumb.jpg`)" :alt="'Balz Rieser'">
             <span class="c-gallery__filler"></span>
             <span class="c-gallery__filler"></span>
             <span class="c-gallery__filler"></span>
@@ -40,14 +40,16 @@ export default {
     data() {
        return {
            images: [
-               'DSCN5695.jpeg',
-               'DSCN5706.jpeg',
-               'DSCN5784.jpeg',
-               'DSCN5809.jpeg',
-               'IMG_7711.jpeg',
-               'IMG_7798.jpeg',
-               'IMG_7799.jpeg',
-               'IMG_9322.jpeg',
+               '01',
+               '02',
+               '03',
+               '04',
+               '05',
+               '06',
+               '07',
+               '08',
+               '09',
+               '10',
            ]
        }
     }
