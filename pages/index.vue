@@ -78,12 +78,14 @@
         },
         filters: {
             month(data) {
-                let date = new Date(data);
                 moment.locale('de-ch');
+                let dateString = data.split(/-/);
+                let date = new Date(dateString[0], dateString[1]);
                 return moment(date).format('MMMM');
             },
             year(data) {
-                let date = new Date(data);
+                let dateString = data.split(/-/);
+                let date = new Date(dateString[0], dateString[1]);
                 return date.getFullYear().toString();
             }
         }
