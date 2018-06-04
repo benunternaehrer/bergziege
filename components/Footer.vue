@@ -17,7 +17,7 @@
             <div class="l-col l-col--1 l-col--12@md"></div>
 
             <div class="c-footer__sponsors l-col l-col--4 l-col--12@md">
-                <h4 class="c-footer__title">Sponsoren</h4>
+                <h4 class="c-footer__title">Partner</h4>
                 <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-abs.jpg" alt="ABS">
                 <img class="c-footer__sponsor" src="~/assets/images/sponsors/sponsor-huwyler.jpg" alt="Huwyler">
             </div>
