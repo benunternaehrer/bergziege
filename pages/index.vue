@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="l-row">
-                <div class="l-col l-col--6 l-col--12@md" v-for="teaser in posts.results">
+                <div class="l-col l-col--6 l-col--12@md" v-for="teaser in posts">
                     <app-blog-teaser
                             :abstract="teaser.data.abstract[0].text"
                             :title="teaser.data.titel[0].text"
@@ -74,14 +74,27 @@
         async asyncData ({ params }) {
             let prismic = new Prismic();
             let { data } = await prismic.getPosts();
-            return { posts: data }
+            let posts = data.results;
+
+            posts.sort((a, b) => {
+                let keyA = new Date(a.first_publication_date);
+                let keyB = new Date(b.first_publication_date);
+                // Compare the 2 dates
+                if(keyA > keyB) return -1;
+                if(keyA < keyB) return 1;
+                return 0;
+            });
+
+            return {
+                posts
+            }
         },
+
         filters: {
             month(data) {
                 moment.locale('de-ch');
                 let dateString = data.split(/-/);
-                let date = new Date(dateString[0], dateString[1]);
-                return moment(date).format('MMMM');
+                return moment(dateString[0] + dateString[1] + '01').format('MMMM');
             },
             year(data) {
                 let dateString = data.split(/-/);
