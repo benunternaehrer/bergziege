@@ -99,7 +99,7 @@ $fonts: (
 // Usage: @include font-size(fs-100);
 // The purpose of the key-numbers is to have them ordered relative to their font-size.
 // The key-numbers are not related in any other way to the font-size or line-height.
-// Use fs-100 as basic font-size. 
+// Use fs-100 as basic font-size.
 
 $font-sizes: (
     fs-80: (
@@ -138,7 +138,8 @@ $font-sizes: (
         line-height: 120%
     ),
     fs-section-title-main: (
-        font-size: 40px,
+        font-size: 32px,
+        font-size-sm: 40px,
         font-size-md: 50px,
         font-size-lg: 70px,
         line-height: 120%,
