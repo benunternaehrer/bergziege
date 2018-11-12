@@ -67,7 +67,6 @@ module.exports = {
         routes: function() {
             return getPosts()
                 .then((res) => {
-                    console.log(res);
                     return res.data.results.map((post) => {
                         return `/${post.slugs[0]}--${post.id}`
                     });

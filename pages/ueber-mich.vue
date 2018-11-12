@@ -6,17 +6,16 @@
 
         <main class="l-row">
             <div class="l-content-w-narrow">
-                <app-section-title titleMain="Portrait Balz Rieser " text-align="center"></app-section-title>
+                <app-section-title titleMain="Portrait Balz Rieser" text-align="center"></app-section-title>
 
                 <div class="c-article">
                     <p class="c-article__paragraph">
-                        Aufgewachsen bin ich auf einem kleinen Bauernhof auf dem Steinhuserberg.<br>
-                        Schon da waren Bewegung, Vielseitigkeit und das Arbeiten im Freien immer wichtig in meinem Leben. Deshalb entschied ich mich für die Ausbildung als Zimmermann.
+                        Aufgewachsen bin ich auf einem kleinen Bauernhof auf dem Steinhuserberg. Schon da waren Bewegung, Vielseitigkeit und das Arbeiten im Freien immer wichtig in meinem Leben. Deshalb entschied ich mich für die Ausbildung als Zimmermann.
                         Die Arbeit stillte meinen Drang nach Bewegung und Abwechslung ganz gut, meine Erfüllung fand ich aber an den Wochenenden in den Bergen.
-                        Ob Winter oder Sommer, ob Fels oder Schnee – so oft es ging, zog es mich mit Freunden in die wunderbare Bergwelt.<br>
+                        Ob Winter oder Sommer, ob Fels oder Schnee – so oft es ging, zog es mich mit Freunden in die wunderbare Bergwelt.
                     </p>
                     <p class="c-article__paragraph">
-                        Die Leidenschaft und die Freude daran, die unglaubliche Schönheit und Vielfalt der Berge mit anderen zu teilen, brachte mich dazu, mich zum Bergführer ausbilden zu lassen. 
+                        Die Leidenschaft und die Freude daran, die unglaubliche Schönheit und Vielfalt der Berge mit anderen zu teilen, brachte mich dazu, mich zum Bergführer ausbilden zu lassen.
                     </p>
                     <p class="c-article__paragraph">
                         Nun freue ich mich darauf, auch dir diese Schönheit, Ruhe und Abgeschiedenheit in der Bergwelt zu zeigen und dich bei deiner nächsten Tour zu begleiten.

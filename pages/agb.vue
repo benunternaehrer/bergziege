@@ -67,6 +67,14 @@ export default {
 <style lang="scss" type="text/scss">
     @import "../assets/sass/import-variables.scss";
 
+    .c-article {
+        margin-bottom: $sp11;
+
+        @include size(md-down) {
+            margin-bottom: $sp8;
+        }
+    }
+
     .s-wysiwyg {
         h2 {
             @include font(secondary, bold, null, fs-100);
