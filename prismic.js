@@ -57,9 +57,7 @@ class Prismic {
                     reject(err);
                 });
         });
-
     }
-
 }
 
 export { Prismic };
