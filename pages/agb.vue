@@ -3,7 +3,7 @@
         <main class="l-row">
             <div class="l-content-w-narrow">
                 <app-section-title :titleMain="'Allgemeine Geschäftsbedingungen'" :textAlign="'center'"></app-section-title>
-                <div class="s-wysiwyg" v-html="html">
+                <div class="s-wysiwyg c-article" v-html="html">
                 </div>
             </div>
         </main>
