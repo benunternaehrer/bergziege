@@ -6,16 +6,22 @@
 
         <main class="l-row">
             <div class="l-content-w-narrow">
-                <app-section-title titleMain="Über mich" text-align="center"></app-section-title>
+                <app-section-title titleMain="Portrait Balz Rieser " text-align="center"></app-section-title>
 
                 <div class="c-article">
                     <p class="c-article__paragraph">
-                        Bewegung, Vielseitigkeit und das Arbeiten im Freien waren schon immer wichtig in meinem Leben. Deshalb entschied ich mich für die Ausbildung als Zimmermann, welche ich im Jahr 2005 abschloss. Die Arbeit stillte meinen Drang nach Bewegung und Abwechslung ganz gut, meine Erfüllung fand ich aber an den Wochenenden in den Bergen. Ob Winter oder Sommer, ob Fels oder Schnee – so oft es ging, zog es mich mit Freunden in die wunderbare Bergwelt.
+                        Aufgewachsen bin ich auf einem kleinen Bauernhof auf dem Steinhuserberg.<br>
+                        Schon da waren Bewegung, Vielseitigkeit und das Arbeiten im Freien immer wichtig in meinem Leben. Deshalb entschied ich mich für die Ausbildung als Zimmermann.
+                        Die Arbeit stillte meinen Drang nach Bewegung und Abwechslung ganz gut, meine Erfüllung fand ich aber an den Wochenenden in den Bergen.
+                        Ob Winter oder Sommer, ob Fels oder Schnee – so oft es ging, zog es mich mit Freunden in die wunderbare Bergwelt.<br>
                     </p>
                     <p class="c-article__paragraph">
-                        Die Leidenschaft und die Freude daran, die unglaubliche Schönheit und Vielfalt der Berge mit anderen zu teilen, hat dazu geführt, dass ich mich für die Bergführer Ausbildung entschlossen habe. Die dreijährige Ausbildung ist in drei Teile gegliedert. Im ersten Jahr wird im Bergführer- Aspirantenkurs in verschiedenen Modulen im technischen und führungstechnischen Bereich ausgebildet. Nach bestandenen Aspirantenprüfungen folgen eineinhalb Praxisjahre, in denen, begleitet von Bergführern, möglichst viele Erfahrungen gesammelt werden. Mit den Winter- und Sommerprüfungen wird die Ausbildung im letzten Halbjahr abgeschlossen.
-                        Im September 2016 habe ich den Bergführer-Aspirantenkurs abgeschlossen und befinde mich nun in der Aspirantenzeit. Eine spannende, lernreiche Zeit mit vielen tollen Touren, Eindrücken und interessanten Gästen.
+                        Die Leidenschaft und die Freude daran, die unglaubliche Schönheit und Vielfalt der Berge mit anderen zu teilen, brachte mich dazu, mich zum Bergführer ausbilden zu lassen. 
                     </p>
+                    <p class="c-article__paragraph">
+                        Nun freue ich mich darauf, auch dir diese Schönheit, Ruhe und Abgeschiedenheit in der Bergwelt zu zeigen und dich bei deiner nächsten Tour zu begleiten.
+                    </p>
+                    <img src="~assets/images/sig-br.png">
                 </div>
             </div>
         </main>
