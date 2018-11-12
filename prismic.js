@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    endpoint: 'http://bergziege.prismic.io/api/v2',
+    endpoint: 'https://bergziege.prismic.io/api/v2',
 };
 
 class Prismic {
