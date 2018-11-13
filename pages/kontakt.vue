@@ -26,13 +26,16 @@ export default {
         'app-section-title': SectionTitle,
         'app-contact-form': ContactForm,
     },
-    head: {
-        script: [
-            {
-                src: 'https://s.pageclip.co/v1/pageclip.js'
-            }
-        ],
-    }
+    head() {
+        return {
+            title: 'Kontakt',
+            script: [
+                {
+                    src: 'https://s.pageclip.co/v1/pageclip.js'
+                }
+            ],
+        }
+    },
 };
 </script>
 

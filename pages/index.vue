@@ -70,7 +70,11 @@
                 posts: null
             }
         },
-
+        head() {
+            return {
+                title: 'Home',
+            }
+        },
         async asyncData ({ params }) {
             let prismic = new Prismic();
             let { data } = await prismic.getPosts();
@@ -111,22 +115,6 @@
 
 .c-main {
     position: relative;
-
-    /**
-    &::after {
-        position: absolute;
-        background-color: $color-white;
-        background-image: url('~/assets/images/background-1.jpg');
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        content: '';
-        z-index: -1;
-        opacity: 0.25;
-    }
-    **/
 }
 
 .c-lead {

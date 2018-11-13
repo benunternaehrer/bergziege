@@ -23,6 +23,11 @@ export default {
             html: null
         }
     },
+    head() {
+        return {
+            title: 'AGB',
+        }
+    },
     async asyncData () {
         const { data } = await new Prismic().getPost('W-nEbRIAACUA1Xhq');
         const content = data.results[0].data.content;

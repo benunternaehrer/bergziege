@@ -47,6 +47,8 @@ module.exports = {
                 rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:700,900,300,400'
             }
         ],
+        title: 'Home',
+        titleTemplate: '%s - Balz Rieser, Bergführer IVBV',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' }

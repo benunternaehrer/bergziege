@@ -40,6 +40,11 @@
                 post: null
             }
         },
+        head() {
+            return {
+                title: 'Blog',
+            }
+        },
         async asyncData ({ params }) {
             let postId = params.post.split('--')[1];
             let { data } = await new Prismic().getPost(postId);

@@ -3,7 +3,7 @@
         <div class="c-header__inner-w">
             <div class="c-header__logo-w">
                 <router-link class="c-header__logo-link" to="/">
-                    <img class="c-header__logo" src="~/assets/images/balz-rieser.svg" alt="Balz Rieser, Bergführeraspirant SBV">
+                    <img class="c-header__logo" src="~/assets/images/balz-rieser.svg" alt="Balz Rieser, Bergführera IVBV">
                 </router-link>
             </div>
             <nav class="c-header__nav">

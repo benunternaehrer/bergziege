@@ -57,7 +57,12 @@ export default {
                '10',
            ]
        }
-    }
+    },
+    head() {
+        return {
+            title: 'Über mich',
+        }
+    },
 };
 </script>
 
