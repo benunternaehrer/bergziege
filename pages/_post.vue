@@ -37,7 +37,7 @@
         },
         data() {
             return {
-                post: null
+                post: null,
             }
         },
         head() {
@@ -45,7 +45,7 @@
                 title: 'Blog',
             }
         },
-        async asyncData ({ params }) {
+        async asyncData({ params }) {
             let postId = params.post.split('--')[1];
             let { data } = await new Prismic().getPost(postId);
             return { post: data.results[0] }

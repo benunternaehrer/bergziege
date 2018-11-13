@@ -16,24 +16,36 @@
 export default {
     name: 'ContactForm',
     mounted(){
-        let form = this.$refs['form'];
-        Pageclip.form(form, {
-            onSubmit: function(event) {
-                form.classList.add('is-submitting');
-            },
-            onResponse: function (error, response) {
-                if(error) {
-                    form.classList.remove('is-submitting');
-                }
 
-                form.classList.add('was-submitted');
+        const intervalCheck = setInterval(() => {
+            if(Pageclip) {
+                this.initPageclip();
+                clearInterval(intervalCheck);
+            }
+        }, 100);
+    },
+    methods: {
+        initPageclip() {
+            let form = this.$refs['form'];
 
-                setTimeout(() => {
-                    form.classList.remove('is-submitting');
-                    form.classList.remove('was-submitted');
-                }, 5000);
-            },
-        })
+            Pageclip.form(form, {
+                onSubmit: function(event) {
+                    form.classList.add('is-submitting');
+                },
+                onResponse: function (error, response) {
+                    if(error) {
+                        form.classList.remove('is-submitting');
+                    }
+
+                    form.classList.add('was-submitted');
+
+                    setTimeout(() => {
+                        form.classList.remove('is-submitting');
+                        form.classList.remove('was-submitted');
+                    }, 5000);
+                },
+            })
+        }
     }
 }
 </script>

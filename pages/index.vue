@@ -116,10 +116,4 @@
 .c-main {
     position: relative;
 }
-
-.c-lead {
-    @include font(primary, normal, null, fs-140);
-    margin-bottom: $sp8;
-    text-align: center;
-}
 </style>
