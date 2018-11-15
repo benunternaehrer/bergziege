@@ -15,36 +15,14 @@
         </div>
 
         <div class="l-row l-content-w l-content-w--sm">
-            <div class="l-col l-col--6 l-col--12@md">
+            <div class="l-col l-col--6 l-col--12@md" v-for="teaser in angebote">
                 <app-blog-teaser
-                    :title="'Skitourenreisen'"
-                    :background-url="require('~/assets/images/angebote/angebot-winter-skitourenreisen--teaser.jpg')"
-                    :link="'angebote/winter/skitourenreisen'"
-                    :buttonText="'Zum Angebot'"
-                ></app-blog-teaser>
-            </div>
-            <div class="l-col l-col--6 l-col--12@md">
-                <app-blog-teaser
-                    :title="'Skitouren'"
-                    :background-url="require('~/assets/images/angebote/angebot-winter-skitouren--teaser.jpg')"
-                    :link="'angebote/winter/skitouren'"
-                    :buttonText="'Zum Angebot'"
-                ></app-blog-teaser>
-            </div>
-            <div class="l-col l-col--6 l-col--12@md">
-                <app-blog-teaser
-                    :title="'Freeriden'"
-                    :background-url="require('~/assets/images/angebote/angebot-winter-freeriden--teaser.jpg')"
-                    :link="'angebote/winter/freeriden'"
-                    :buttonText="'Zum Angebot'"
-                ></app-blog-teaser>
-            </div>
-            <div class="l-col l-col--6 l-col--12@md">
-                <app-blog-teaser
-                    :title="'Lawinenkurse'"
-                    :background-url="require('~/assets/images/angebote/angebot-winter-lawinenkurse--teaser.jpg')"
-                    :link="'angebote/winter/lawinenkurse'"
-                    :buttonText="'Zum Angebot'"
+                    :abstract="teaser.data.abstract[0].text"
+                    :title="teaser.data.titel[0].text"
+                    :key="teaser.id"
+                    :background-url="teaser.data.teaser_image.teaser.url"
+                    :link="'/angebote/winter/' + teaser.slugs[0]"
+                    :id="teaser.id"
                 ></app-blog-teaser>
             </div>
         </div>
@@ -82,6 +60,7 @@ import SectionTitle from '~/components/SectionTitle.vue';
 import Button from '~/components/Button.vue';
 import BlogTeaser from '~/components/BlogTeaser.vue';
 import Header from '~/components/Header.vue';
+import { Prismic } from '../../../prismic.js';
 
 export default {
     components: {
@@ -93,6 +72,29 @@ export default {
     head() {
         return {
             title: 'Angebote Winter',
+        }
+    },
+    data() {
+        return {
+            angebote: null
+        }
+    },
+    async asyncData ({ params }) {
+        let prismic = new Prismic();
+        let { data } = await prismic.getAngeboteWinter();
+        let angebote = data.results;
+
+        angebote.sort((a, b) => {
+            let keyA = new Date(a.first_publication_date);
+            let keyB = new Date(b.first_publication_date);
+            // Compare the 2 dates
+            if(keyA > keyB) return -1;
+            if(keyA < keyB) return 1;
+            return 0;
+        });
+
+        return {
+            angebote
         }
     },
 }
