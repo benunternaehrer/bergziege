@@ -3,7 +3,7 @@
         <main class="l-row">
             <div class="l-content-w-narrow">
                 <app-section-title :titleMain="'Allgemeine Geschäftsbedingungen'" :textAlign="'center'"></app-section-title>
-                <div class="s-wysiwyg c-article" v-html="html">
+                <div class="s-wysiwyg" v-html="html">
                 </div>
             </div>
         </main>
@@ -70,28 +70,5 @@ export default {
 </script>
 
 <style lang="scss" type="text/scss">
-    @import "../assets/sass/import-variables.scss";
-
-    .c-article {
-        margin-bottom: $sp11;
-
-        @include size(md-down) {
-            margin-bottom: $sp8;
-        }
-    }
-
-    .s-wysiwyg {
-        h2 {
-            @include font(secondary, bold, null, fs-100);
-        }
-
-        ul {
-            padding-left: $sp6;
-            padding-bottom: $sp5;
-        }
-
-        p {
-            padding-bottom: $sp5;
-        }
-    }
+@import "../assets/sass/import-variables.scss";
 </style>

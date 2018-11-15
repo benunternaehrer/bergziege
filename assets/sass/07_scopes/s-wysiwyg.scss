@@ -1,0 +1,35 @@
+.s-wysiwyg {
+    margin-bottom: $sp12;
+
+    @include size(md-down) {
+        margin-bottom: $sp8;
+    }
+
+    h2 {
+        @include font(secondary, bold, null, fs-160);
+        padding-top: $sp4;
+        padding-bottom: $sp4;
+    }
+
+    h3 {
+        @include font(secondary, bold, null, fs-100);
+    }
+
+    ul {
+        padding-left: $sp6;
+        padding-bottom: $sp5;
+    }
+
+    p {
+        padding-bottom: $sp5;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            color: $color-secondary;
+        }
+    }
+}

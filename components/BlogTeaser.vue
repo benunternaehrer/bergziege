@@ -7,7 +7,7 @@
             </h4>
             <h3 class="c-blog-teaser__title">{{ title }}</h3>
             <div>
-                <app-button :text="'Lesen'" :modifier="'small'" @click.native="route"></app-button>
+                <app-button :text="buttonText ? buttonText : 'Lesen'" :modifier="'small'" @click.native="route"></app-button>
             </div>
         </div>
     </article>
@@ -30,12 +30,14 @@ export default {
         backgroundUrl: null,
         slug: String,
         id: String,
+        link: String,
+        buttonText: String,
     },
     methods: {
         route(e){
             this.$router.push(
                 {
-                    path: `/${this.slug}--${this.id}`
+                    path: this.link ? `/${this.link}` : `/${this.slug}--${this.id}`
                 }
             )
         }
@@ -48,6 +50,7 @@ export default {
 
 .c-blog-teaser {
     background-size: cover;
+    background-position: center;
     padding: $sp8;
     height: 420px;
     position: relative;

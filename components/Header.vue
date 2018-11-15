@@ -9,6 +9,18 @@
             <nav class="c-header__nav">
                 <router-link class="c-header__nav-link" to="/">Home</router-link>
                 <router-link class="c-header__nav-link" to="/ueber-mich">Über mich</router-link>
+                <div class="c-header__nav-sub-w">
+                    <router-link class="c-header__nav-link c-header__nav-link--sub" to="/angebote">Angebote</router-link>
+                    <ul class="c-header__nav-sub">
+                        <li class="c-header__nav-sub-el">
+                            <router-link class="c-header__nav-sub-link" to="/angebote/winter">Winter</router-link>
+                        </li>
+                        <li class="c-header__nav-sub-el">
+                            <router-link class="c-header__nav-sub-link" to="/angebote/sommer">Sommer</router-link>
+                        </li>
+                    </ul>
+                </div>
+
                 <router-link class="c-header__nav-link" to="/kontakt">Kontakt</router-link>
             </nav>
             <nav class="c-header__social">
@@ -95,6 +107,9 @@ export default {
     position: relative;
     white-space: nowrap;
 
+    &:hover,
+    &:focus,
+    &.is-active-within:not([href="/"]),
     &.is-active {
         &::after {
            content: '';
@@ -121,6 +136,57 @@ export default {
                 left: $sp4;
                 //transform: translateX(-#{$line-width / 2});
             }
+        }
+    }
+}
+
+.c-header__nav-sub-w {
+    position: relative;
+}
+
+.c-header__nav-sub {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: $sp4;
+    padding-bottom: $sp6;
+    z-index: 2;
+    background-color: $color-secondary;
+
+    .c-header__nav-sub-w:hover & {
+        display: block;
+    }
+}
+
+.c-header__nav-sub-link {
+    $line-width: 100%;
+
+    @include font-size(fs-nav);
+    //color: $color-primary;
+    text-transform: none;
+    display: inline-block;
+    width: 100%;
+    padding-top: $sp4;
+    padding-left: $sp6;
+    padding-bottom: $sp4;
+    padding-right: $sp6;
+    position: relative;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus,
+    &.is-active-within,
+    &.is-active {
+        &::after {
+            content: '';
+            height: calc(100% - #{2 * $sp4});
+            background-color: $color-primary;
+            width: 3px;
+            position: absolute;
+            top: $sp4;
+            left: 0;
+            //transform: translateX(-#{$line-width / 2});
         }
     }
 }

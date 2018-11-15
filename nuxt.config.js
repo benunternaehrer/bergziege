@@ -58,7 +58,7 @@ module.exports = {
         color: '#23D49C',
     },
     router: {
-        linkActiveClass: '',
+        linkActiveClass: 'is-active-within',
         linkExactActiveClass: 'is-active'
     },
     plugins: ['~/plugins/v-img'],
