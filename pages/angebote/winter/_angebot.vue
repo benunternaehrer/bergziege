@@ -37,7 +37,7 @@ export default {
     },
     head() {
         return {
-            title: 'Angebot',
+            title: this.angebot.data.titel[0].text,
         }
     },
     async asyncData({ params }) {
@@ -96,17 +96,5 @@ export default {
 
 <style lang="scss" type="text/scss">
 @import "../../../assets/sass/import-variables.scss";
-
-.c-post {
-
-}
-
-.c-post__text {
-    margin-bottom: $sp11;
-}
-
-.c-post__paragraph {
-    margin-bottom: $sp5;
-}
 
 </style>

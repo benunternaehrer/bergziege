@@ -21,7 +21,7 @@
                     :title="teaser.data.titel[0].text"
                     :key="teaser.id"
                     :background-url="teaser.data.teaser_image.teaser.url"
-                    :link="'/angebote/winter/' + teaser.slugs[0]"
+                    :link="'angebote/winter/' + teaser.slugs[0]"
                     :id="teaser.id"
                 ></app-blog-teaser>
             </div>

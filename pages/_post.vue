@@ -55,11 +55,6 @@
 
 <style lang="scss" type="text/scss">
 @import "../assets/sass/import-variables.scss";
-
-.c-post {
-
-}
-
 .c-post__text {
     margin-bottom: $sp11;
 }

@@ -35,6 +35,23 @@ const getPosts = () => {
     });
 };
 
+const getAngeboteWinter = () => {
+    return new Promise((resolve, reject) => {
+        getRef()
+            .then(() => {
+                axios.get(`${config.endpoint}/documents/search?ref=${masterRef}&q=[[at(document.type,+"angebot_winter")]]#format=json`)
+                    .then((data) => {
+                        resolve(data);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    })
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    });
+};
 
 module.exports = {
     css: [
@@ -66,13 +83,22 @@ module.exports = {
         vendor: ['v-img']
     },
     generate: {
-        routes: function() {
-            return getPosts()
+        routes: function () {
+            let posts = getPosts()
                 .then((res) => {
                     return res.data.results.map((post) => {
                         return `/${post.slugs[0]}--${post.id}`
                     });
                 });
+            let angebote = getAngeboteWinter()
+                .then((res) => {
+                    return res.data.results.map((post) => {
+                        return '/angebote/winter/' + post.slugs[0]
+                    });
+                });
+            return Promise.all([posts, angebote]).then(values => {
+                return values.join().split(',');
+            })
         }
     }
 };
