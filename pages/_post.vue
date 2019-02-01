@@ -46,7 +46,8 @@
             }
         },
         async asyncData({ params }) {
-            let postId = params.post.split('--')[1];
+            let postId = params.post.split('--');
+            postId = postId[postId.length - 1];
             let { data } = await new Prismic().getPost(postId);
             return { post: data.results[0] }
         },
