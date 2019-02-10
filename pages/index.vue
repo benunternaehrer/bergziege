@@ -29,7 +29,7 @@
                             :month="teaser.first_publication_date|month"
                             :key="teaser.id"
                             :background-url="teaser.data.teaser_image.teaser.url"
-                            :slug="teaser.slugs[0]"
+                            :slug="teaser.uid"
                             :id="teaser.id"
                     ></app-blog-teaser>
                 </div>

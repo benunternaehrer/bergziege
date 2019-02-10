@@ -59,11 +59,11 @@ class Prismic {
         });
     }
 
-    getAngeboteWinter(){
+    getAngebote(documentType){
         return new Promise((resolve, reject) => {
             this._getRef()
                 .then(() => {
-                    axios.get(`${this.endpoint}/documents/search?ref=${this.masterRef}&q=[[at(document.type,+"angebot_winter")]]#format=json`)
+                    axios.get(`${this.endpoint}/documents/search?ref=${this.masterRef}&q=[[at(document.type,+"angebot_${documentType}")]]#format=json`)
                         .then((data) => {
                             resolve(data);
                         })
@@ -77,11 +77,11 @@ class Prismic {
         });
     }
 
-    getAngebotWinter(uid){
+    getAngebot(documentType, uid){
         return new Promise((resolve, reject) => {
             this._getRef()
                 .then(() => {
-                    axios.get(`${this.endpoint}/documents/search?ref=${this.masterRef}&q=[[at(my.angebot_winter.uid,+"${uid}")]]#format=json`) //https://bergziege.prismic.io/api/v2/documents/search?ref=W-3MihcAADMALmRg&q=[[at(my.angebot_winter.uid,+%22skitourenreisen%22)]]
+                    axios.get(`${this.endpoint}/documents/search?ref=${this.masterRef}&q=[[at(my.angebot_${documentType}.uid,+"${uid}")]]#format=json`) //https://bergziege.prismic.io/api/v2/documents/search?ref=W-3MihcAADMALmRg&q=[[at(my.angebot_winter.uid,+%22skitourenreisen%22)]]
                         .then((data) => {
                             resolve(data);
                         })

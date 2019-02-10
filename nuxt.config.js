@@ -35,11 +35,11 @@ const getPosts = () => {
     });
 };
 
-const getAngeboteWinter = () => {
+const getAngebote = (documentType) => {
     return new Promise((resolve, reject) => {
         getRef()
             .then(() => {
-                axios.get(`${config.endpoint}/documents/search?ref=${masterRef}&q=[[at(document.type,+"angebot_winter")]]#format=json`)
+                axios.get(`${config.endpoint}/documents/search?ref=${masterRef}&q=[[at(document.type,+"angebot_${documentType}")]]#format=json`)
                     .then((data) => {
                         resolve(data);
                     })
@@ -87,16 +87,22 @@ module.exports = {
             let posts = getPosts()
                 .then((res) => {
                     return res.data.results.map((post) => {
-                        return `/${post.slugs[0]}--${post.id}`
+                        return `/${post.uid}--${post.id}`
                     });
                 });
-            let angebote = getAngeboteWinter()
+            let angeboteWinter = getAngebote('winter')
                 .then((res) => {
                     return res.data.results.map((post) => {
-                        return '/angebote/winter/' + post.slugs[0]
+                        return '/angebote/winter/' + post.uid
                     });
                 });
-            return Promise.all([posts, angebote]).then(values => {
+            let angeboteSommer = getAngebote('sommer')
+                .then((res) => {
+                    return res.data.results.map((post) => {
+                        return '/angebote/sommer/' + post.uid
+                    });
+                });
+            return Promise.all([posts, angeboteWinter, angeboteSommer]).then(values => {
                 return values.join().split(',');
             })
         }

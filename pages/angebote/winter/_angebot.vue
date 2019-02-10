@@ -23,7 +23,7 @@
 
 <script>
 import SectionTitle from '~/components/SectionTitle.vue';
-import { Prismic } from '../../../prismic.js';
+import { Prismic } from '~/prismic.js';
 
 export default {
     name: 'AngebotWinter',
@@ -41,7 +41,7 @@ export default {
         }
     },
     async asyncData({ params }) {
-        const { data } = await new Prismic().getAngebotWinter(params.angebot);
+        const { data } = await new Prismic().getAngebot('winter', params.angebot);
 
         const content = data.results[0].data.inhalt;
 
@@ -95,6 +95,4 @@ export default {
 </script>
 
 <style lang="scss" type="text/scss">
-@import "../../../assets/sass/import-variables.scss";
-
 </style>

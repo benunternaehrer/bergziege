@@ -21,7 +21,7 @@
                     :title="teaser.data.titel[0].text"
                     :key="teaser.id"
                     :background-url="teaser.data.teaser_image.teaser.url"
-                    :link="'angebote/winter/' + teaser.slugs[0]"
+                    :link="'angebote/winter/' + teaser.uid"
                     :id="teaser.id"
                 ></app-blog-teaser>
             </div>
@@ -57,17 +57,13 @@
 
 <script>
 import SectionTitle from '~/components/SectionTitle.vue';
-import Button from '~/components/Button.vue';
 import BlogTeaser from '~/components/BlogTeaser.vue';
-import Header from '~/components/Header.vue';
 import { Prismic } from '../../../prismic.js';
 
 export default {
     components: {
         'app-section-title': SectionTitle,
-        'app-button': Button,
         'app-blog-teaser': BlogTeaser,
-        'app-header': Header,
     },
     head() {
         return {
@@ -81,7 +77,7 @@ export default {
     },
     async asyncData ({ params }) {
         let prismic = new Prismic();
-        let { data } = await prismic.getAngeboteWinter();
+        let { data } = await prismic.getAngebote('winter');
         let angebote = data.results;
 
         angebote.sort((a, b) => {
