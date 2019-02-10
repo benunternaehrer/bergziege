@@ -14,7 +14,7 @@
         </div>
 
 
-        <div class="l-content-w">
+        <div v-if="posts" class="l-content-w">
             <div class="l-row">
                 <div class="l-col l-col--12">
                     <app-section-title titleMain="Blog" text-align="center"></app-section-title>
@@ -23,14 +23,14 @@
             <div class="l-row">
                 <div class="l-col l-col--6 l-col--12@md" v-for="teaser in posts">
                     <app-blog-teaser
-                            :abstract="teaser.data.abstract[0].text"
-                            :title="teaser.data.titel[0].text"
-                            :year="teaser.first_publication_date|year"
-                            :month="teaser.first_publication_date|month"
-                            :key="teaser.id"
-                            :background-url="teaser.data.teaser_image.teaser.url"
-                            :slug="teaser.uid"
-                            :id="teaser.id"
+                        :abstract="teaser.data.abstract[0].text"
+                        :title="teaser.data.titel[0].text"
+                        :year="teaser.first_publication_date|year"
+                        :month="teaser.first_publication_date|month"
+                        :key="teaser.id"
+                        :background-url="teaser.data.teaser_image.teaser.url"
+                        :slug="teaser.uid"
+                        :id="teaser.id"
                     ></app-blog-teaser>
                 </div>
             </div>

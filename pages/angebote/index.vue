@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="l-row l-content-w l-content-w--sm">
             <div class="l-col l-col--12">
                 <app-section-title titleMain="Angebote" text-align="center"></app-section-title>

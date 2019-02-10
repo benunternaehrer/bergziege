@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="post">
         <div class="c-image">
             <img :src="post.data.teaser_image.url" class="c-image__img">
         </div>
