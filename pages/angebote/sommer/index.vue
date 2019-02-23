@@ -18,7 +18,6 @@
         <div class="l-row l-content-w l-content-w--sm">
             <div class="l-col l-col--6 l-col--12@md" v-for="teaser in angebote">
                 <app-blog-teaser
-                    :abstract="teaser.data.abstract[0].text"
                     :title="teaser.data.titel[0].text"
                     :key="teaser.id"
                     :background-url="teaser.data.teaser_image.teaser.url"

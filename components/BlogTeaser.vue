@@ -25,7 +25,6 @@ export default {
     props: {
         year: String,
         month: String,
-        abstract: String,
         title: String,
         backgroundUrl: null,
         slug: String,
