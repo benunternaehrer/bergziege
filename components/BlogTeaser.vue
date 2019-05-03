@@ -88,7 +88,7 @@ export default {
     @include font-size(fs-100);
     position: relative;
     text-transform: uppercase;
-    margin-bottom: $sp7;
+    margin-bottom: $sp6;
 
     &::after {
         $line-width: 100px;
@@ -113,7 +113,7 @@ export default {
 
 
 .c-blog-teaser__title {
-    @include font-size(fs-180);
+    @include font(secondary, bold, $size: fs-180);
     margin-bottom: $sp6;
 }
 
