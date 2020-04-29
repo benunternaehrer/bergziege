@@ -22,7 +22,7 @@
                 <h4 class="c-footer__title">Adresse</h4>
                 <address class="c-footer__text">
                     Balz Rieser<br>
-                    Wolfsmatt 6, 6017 Ruswil <br>
+                    Etzenerle 15, 6017 Ruswil <br>
                     +41 (0)79 437 00 80
                 </address>
             </div>
